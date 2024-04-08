@@ -22,5 +22,29 @@
 (unless (eq system-type 'windows-nt)
   (set-selection-coding-system 'utf-8))
 
+(delete-selection-mode 1) ;;delete as other ide
+(setq mac-option-modifier 'meta
+      mac-command-modifier 'super)
+(global-set-key (kbd "s-a") 'mark-whole-buffer) ;;对应Windows上面的Ctrl-a 全选
+(global-set-key (kbd "s-c") 'kill-ring-save) ;;对应Windows上面的Ctrl-c 复制
+(global-set-key (kbd "s-s") 'save-buffer) ;; 对应Windows上面的Ctrl-s 保存
+(global-set-key (kbd "s-v") 'yank) ;对应Windows上面的Ctrl-v 粘贴
+(global-set-key (kbd "s-z") 'undo) ;对应Windows上面的Ctrol-z 撤销
+(global-set-key (kbd "s-x") 'kill-region) ;对应Windows上面的Ctrol-x 剪切
+
+(unless (package-installed-p 'undo-tree)
+  (package-refresh-contents)
+  (package-install 'undo-tree))
+(require 'undo-tree) ;; 安装 undo-tree
+(global-undo-tree-mode 1);; 可以使用 M-x package-install RET undo-tree RET 安装
+(global-set-key (kbd "s-y") 'undo-tree-redo) ;; 设置重做（redo）的快捷键
+
+(unless (package-installed-p 'solidity-mode)
+  (package-refresh-contents)
+  (package-install 'solidity-mode))
+(require 'solidity-mode)
+(setq solidity-comment-style 'slash)
+
+
 (provide 'init-locales)
 ;;; init-locales.el ends here
