@@ -26,13 +26,18 @@ in the approximate order of how much I use them, from most to least:
 * PHP
 * Erlang
 
-In particular, there's a nice config for *autocompletion* with
-[corfu](https://github.com/minad/corfu), and
+Included is a nice setup for in-buffer autocompletion with
+[corfu](https://github.com/minad/corfu), and minibuffer completion using
+[vertico](https://github.com/minad/vertico).
+
 `flymake` (re-using backends from [flycheck](http://www.flycheck.org))
 is used to immediately highlight syntax errors in Ruby, Python,
 Javascript, Haskell and a number of other languages.
 
 LSP support is provided using `eglot`.
+
+Various popular Emacs tools are included and configured here, such as
+`magit`, `docker.el`, `projectile`, `org-mode` etc., but the focus is moderate
 
 ## Supported Emacs versions
 
@@ -48,8 +53,7 @@ to use the latest stable Emacs release like I do.
 
 To make the most of the programming language-specific support in this
 config, further programs will likely be required, particularly those
-that [flycheck](https://github.com/flycheck/flycheck) uses to provide
-on-the-fly syntax checking.
+that flycheck or flymake use to provide on-the-fly syntax checking.
 
 ## Installation
 
@@ -119,5 +123,3 @@ versions (see "Updates" above). If you still experience problems, go ahead and
 [💼 LinkedIn profile](https://uk.linkedin.com/in/stevepurcell)
 
 [✍ sanityinc.com](http://www.sanityinc.com/)
-
-[🐦 @sanityinc](https://twitter.com/sanityinc)
